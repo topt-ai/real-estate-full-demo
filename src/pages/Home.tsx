@@ -8,7 +8,7 @@ export default function Home() {
   const { listings, loading } = useListings();
   
   useEffect(() => {
-    document.title = 'Jarvis Mendez Real Estate';
+    document.title = 'Jarvis Acevedo Real Estate';
   }, []);
 
   // Get latest 3 active listings
@@ -20,12 +20,12 @@ export default function Home() {
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://picsum.photos/seed/luxuryhome/2000/1200" 
+            src="https://images.unsplash.com/photo-1715742634813-e13fc96d9195?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
             alt="Luxury Home" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
         
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto mt-16">
@@ -52,17 +52,17 @@ export default function Home() {
           </h2>
           <p className="text-lg md:text-xl text-[#2C2C2C] font-light leading-relaxed">
             Con más de 10 años de experiencia en las propiedades más exclusivas de El Salvador, 
-            Jarvis Mendez combina experiencia local con un servicio de clase mundial. Ya sea que 
+            Jarvis Acevedo combina experiencia local con un servicio de clase mundial. Ya sea que 
             esté comprando su primera casa o invirtiendo en bienes raíces de lujo, Jarvis es su guía de confianza.
           </p>
           <div className="mt-12">
             <img 
-              src="https://picsum.photos/seed/agent/800/800" 
-              alt="Jarvis Mendez" 
+              src="/tommyaboutus.webp" 
+              alt="Jarvis Acevedo" 
               className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover mx-auto border-4 border-[#F8F6F2]"
               referrerPolicy="no-referrer"
             />
-            <p className="mt-6 font-serif text-xl">Jarvis Mendez</p>
+            <p className="mt-6 font-serif text-xl">Jarvis Acevedo</p>
             <p className="text-[#C9A84C] uppercase tracking-widest text-xs mt-2">Fundador y Agente Principal</p>
           </div>
         </div>

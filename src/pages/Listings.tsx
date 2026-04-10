@@ -6,7 +6,7 @@ export default function Listings() {
   const { listings, loading, error } = useListings();
 
   useEffect(() => {
-    document.title = 'Propiedades | Jarvis Mendez Real Estate';
+    document.title = 'Propiedades | Jarvis Acevedo Real Estate';
   }, []);
 
   return (
