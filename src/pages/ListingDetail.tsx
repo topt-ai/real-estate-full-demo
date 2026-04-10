@@ -3,7 +3,6 @@ import { ArrowLeft, MapPin, Bed, Bath, Square } from 'lucide-react';
 import { useListings } from '../lib/api';
 import Gallery from '../components/Gallery';
 import WhatsAppButton from '../components/WhatsAppButton';
-import { Helmet } from 'react-helmet-async';
 
 export default function ListingDetail() {
   const { id } = useParams<{ id: string }>();
@@ -39,9 +38,7 @@ export default function ListingDetail() {
   if (error || !listing) {
     return (
       <div className="min-h-screen bg-[#F8F6F2] flex items-center justify-center px-6">
-        <Helmet>
-          <title>Propiedad no encontrada | Jarvis Acevedo Real Estate</title>
-        </Helmet>
+        <title>Propiedad no encontrada | Jarvis Acevedo Real Estate</title>
         <div className="text-center">
           <h1 className="text-4xl font-serif text-[#1A1A1A] mb-6">Propiedad no encontrada</h1>
           <p className="text-[#2C2C2C] font-light mb-8">La propiedad que busca no existe o ya no está disponible.</p>
@@ -60,19 +57,17 @@ export default function ListingDetail() {
 
   return (
     <div className="min-h-screen bg-white pb-24">
-      <Helmet>
-        <title>{listing.titulo} | Jarvis Acevedo Real Estate</title>
-        <meta name="description" content={listing.descripcion.substring(0, 160)} />
-        <meta property="og:title" content={`${listing.titulo} | Jarvis Acevedo Real Estate`} />
-        <meta property="og:description" content={listing.descripcion.substring(0, 160)} />
-        <meta property="og:image" content={listing.fotos[0] || 'https://picsum.photos/seed/luxuryhome/1200/630'} />
-        <meta property="og:url" content={currentUrl} />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${listing.titulo} | Jarvis Acevedo Real Estate`} />
-        <meta name="twitter:description" content={listing.descripcion.substring(0, 160)} />
-        <meta name="twitter:image" content={listing.fotos[0] || 'https://picsum.photos/seed/luxuryhome/1200/630'} />
-      </Helmet>
+      <title>{listing.titulo} | Jarvis Acevedo Real Estate</title>
+      <meta name="description" content={listing.descripcion.substring(0, 160)} />
+      <meta property="og:title" content={`${listing.titulo} | Jarvis Acevedo Real Estate`} />
+      <meta property="og:description" content={listing.descripcion.substring(0, 160)} />
+      <meta property="og:image" content={listing.fotos[0] || 'https://picsum.photos/seed/luxuryhome/1200/630'} />
+      <meta property="og:url" content={currentUrl} />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={`${listing.titulo} | Jarvis Acevedo Real Estate`} />
+      <meta name="twitter:description" content={listing.descripcion.substring(0, 160)} />
+      <meta name="twitter:image" content={listing.fotos[0] || 'https://picsum.photos/seed/luxuryhome/1200/630'} />
 
       {/* Back Link */}
       <div className="max-w-7xl mx-auto px-6 py-8">
