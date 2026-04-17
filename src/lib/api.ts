@@ -12,6 +12,7 @@ export interface Listing {
   fotos: string[];
   whatsapp: string;
   activo: boolean;
+  tipo: 'venta' | 'alquiler' | '';
 }
 
 
@@ -33,7 +34,10 @@ export async function fetchListings(): Promise<Listing[]> {
       const c = row.c;
       const activoVal = c[10]?.v;
       const isActivo = activoVal === true || activoVal === 'TRUE' || activoVal === 'true' || activoVal === 1;
-      
+      const tipoRaw = c[11]?.v?.toString().trim().toLowerCase() || '';
+      const tipo: 'venta' | 'alquiler' | '' =
+        tipoRaw === 'venta' ? 'venta' : tipoRaw === 'alquiler' ? 'alquiler' : '';
+
       return {
         id: c[0]?.v?.toString() || '',
         titulo: c[1]?.v?.toString() || '',
@@ -46,6 +50,7 @@ export async function fetchListings(): Promise<Listing[]> {
         fotos: c[8]?.v?.toString().split(',').map((url: string) => url.trim()).filter(Boolean) || [],
         whatsapp: c[9]?.v?.toString() || '',
         activo: isActivo,
+        tipo,
       };
     });
     

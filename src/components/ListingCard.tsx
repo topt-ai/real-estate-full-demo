@@ -24,6 +24,17 @@ export default function ListingCard({ listing }: ListingCardProps) {
         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold tracking-wider uppercase text-[#1A1A1A]">
           {listing.ubicacion}
         </div>
+        {listing.tipo && (
+          <div
+            className={`absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-semibold tracking-wider uppercase border-2 ${
+              listing.tipo === 'venta'
+                ? 'border-[#C9A84C] text-[#C9A84C]'
+                : 'border-[#1E4A8B] text-[#1E4A8B]'
+            }`}
+          >
+            {listing.tipo}
+          </div>
+        )}
       </Link>
       
       <div className="p-6 flex flex-col flex-grow">

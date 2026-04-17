@@ -137,6 +137,17 @@ export default function ListingDetail() {
           {/* Sidebar / Sticky CTA */}
           <div className="lg:col-span-4">
             <div className="sticky top-32 bg-[#F8F6F2] p-8 md:p-10 border border-gray-100">
+              {listing.tipo && (
+                <div
+                  className={`inline-block rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase border-2 mb-4 ${
+                    listing.tipo === 'venta'
+                      ? 'border-[#C9A84C] text-[#C9A84C]'
+                      : 'border-[#1E4A8B] text-[#1E4A8B]'
+                  }`}
+                >
+                  {listing.tipo}
+                </div>
+              )}
               <p className="text-sm uppercase tracking-widest text-gray-500 mb-2">Precio</p>
               <p className="text-4xl md:text-5xl font-light text-[#1A1A1A] mb-10">
                 {listing.precio}
